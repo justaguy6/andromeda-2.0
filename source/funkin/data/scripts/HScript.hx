@@ -26,7 +26,7 @@ class HScript extends BaseScript
 	{
 		if (name == null)
 			name = file;
-		return fromString(File.getContent(file), name, additionalVars);
+		return fromString(File.getContent(SUtil.getStorageDirectory() + file), name, additionalVars);
 	}
 
 	public static function fromString(script:String, ?name:String = "Script", ?additionalVars:Map<String, Any>)
@@ -50,7 +50,7 @@ class HScript extends BaseScript
 	{
 		if (name == null)
 			name = file;
-		return parseString(File.getContent(file), name);
+		return parseString(File.getContent(SUtil.getStorageDirectory() + file), name);
 	}
 
 	public static function parseString(script:String, ?name:String = "Script")
